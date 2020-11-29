@@ -7,7 +7,6 @@ import UIKit
 
 class LetterChooserController: UIViewController {
     
-    
     var mainController : MainController!
     
     override func viewDidLoad() {
@@ -50,52 +49,34 @@ class LetterChooserController: UIViewController {
             letter.addTarget(self, action: #selector(LetterChooserController.letterClicked(_:)),
                              for: .touchDown)
         
-        
             self.view.addSubview(letter)
-        
-        
         }
-        
-
     }
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        get {return true}
     }
     
     @objc
     func letterClicked(_ button : LetterView){
         
-        
         EffectsController.animateButtonPress(button)
-        
         
         self.mainController.gameState = self.mainController.gameStateBeforePause
         
         self.mainController.questionMark.updateLetter(char: button.letter)
-                
         
         self.mainController.letterClicked(self.mainController.questionMark)
-        
         
         UIView.animate (withDuration: 0.5, animations: {
             self.view.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
             self.view.alpha = 0.1
-            
         
             }, completion: { (b : Bool) in
         
-        
                 self.view.removeFromSuperview()
                 self.removeFromParent()
-        
-        
-        
-                
-                })
-    
+        })
     }
 
     

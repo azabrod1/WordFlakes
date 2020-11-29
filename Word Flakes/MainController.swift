@@ -679,23 +679,23 @@ class MainController: UIViewController {
         if (!display) {return}
         
         switch scoreAdd {
-        case scoreAdd where scoreAdd < 30:
+        case 0..<30:
             displayStatus(status: "Nice:  +\(scoreAdd)", dismiss: true)
-        case scoreAdd where scoreAdd < 60:
+        case 30..<60:
             displayStatus(status: "Great:  +\(scoreAdd)", dismiss: true)
-        case scoreAdd where scoreAdd < 110:
+        case 60..<110:
             displayStatus(status: "Amazing:  +\(scoreAdd)", dismiss: true)
-        case scoreAdd where scoreAdd < 160:
+        case 110..<160:
             displayStatus(status: "Incredible:  +\(scoreAdd)", dismiss: true)
-        case scoreAdd where scoreAdd < 230:
+        case 160..<230:
             displayStatus(status: "Genius:  +\(scoreAdd)", dismiss: true)
-        case scoreAdd where scoreAdd < 300:
+        case 230..<300:
             displayStatus(status:"Unstoppable:  +\(scoreAdd)", dismiss: true)
             ipod.play("unstoppable", "mp3")
-        case scoreAdd where scoreAdd < 400:
+        case 300..<400:
             displayStatus(status:"Masterpiece:  +\(scoreAdd)", dismiss: true)
             ipod.play("masterpiece")
-        case scoreAdd where scoreAdd < 600:
+        case 400..<600:
             displayStatus(status:"Legandary:  +\(scoreAdd)", dismiss: true)
             ipod.play("Legendary", "mp3")
         default:
@@ -728,7 +728,6 @@ class MainController: UIViewController {
         
         backspaceButton.setImage(UIImage(named: "Backspace"), for: UIControl.State.normal)
         backspaceButton.contentEdgeInsets = UIEdgeInsets.init(top:5, left:0, bottom:5, right:15)
-        
         
         playButton.setImage(UIImage(named: "Submit"), for: UIControl.State.normal)
         playButton.setTitleColor(UIColor.clear, for: UIControl.State.normal)

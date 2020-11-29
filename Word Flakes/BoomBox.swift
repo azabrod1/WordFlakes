@@ -14,9 +14,6 @@ class BoomBox{
     var sounds = [String : AVAudioPlayer]()
     var paused = [AVAudioPlayer]()
     
-    
-    
-    
     func play(_ file:NSString, _ type:NSString = "wav"){
         
         do {
@@ -51,7 +48,6 @@ class BoomBox{
         catch {
             print("Player not available")
         }
-        
     }
     
     
@@ -85,12 +81,10 @@ class BoomBox{
         }
         sounds[file as String]!.stop()
         sounds[file as String]?.currentTime = 0
-        
     }
     
     
     func setVolume(file : NSString, type : NSString = "wav", vol : Float ){
-        
         
         do {
             if (sounds[file as String] == nil ) {
@@ -105,9 +99,6 @@ class BoomBox{
         }
         
     }
-
-    
-    
     
     func pause(file:NSString, type:NSString = "wav"){
         
@@ -119,18 +110,16 @@ class BoomBox{
         
         }
     }
-    
+
     
     func pauseAll(){
-        
+ 
         for sound in sounds.values{
             if (sound.isPlaying){
                 sound.pause()
                 paused.append(sound)
             }
-            
         }
-        
     }
     
     
@@ -140,7 +129,4 @@ class BoomBox{
         }
         paused.removeAll()
     }
-    
-    
-
 }

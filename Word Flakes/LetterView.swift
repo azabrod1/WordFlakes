@@ -21,12 +21,8 @@ class LetterView: UIButton {
     //let borderRedColor = UIColor(red: 171.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
     //let borderPurpleColor = UIColor(red: 166.0/255.0, green: 4.0/255.0, blue: 181.0/255.0, alpha: 1.0)
     
-
-   
     var multiplier = 1
     var isSpecial = false
-    
-    
     
     // properties
     let initialVelocity = 4.5
@@ -44,16 +40,13 @@ class LetterView: UIButton {
 
     init(boardFrame : CGRect, char : String = "") {
     
-        
         super.init(frame: CGRect(x: 0, y: 0, width: LetterView.TILE_SIDE, height: LetterView.TILE_SIDE))
-        
         
         self.isUserInteractionEnabled = true
         
         self.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
 
         self.backgroundColor = UIColor.white
-        
         
         self.layer.cornerRadius = 0.2 * self.frame.width
         self.clipsToBounds = true
@@ -79,35 +72,21 @@ class LetterView: UIButton {
         
         setPhysics(boardFrame: boardFrame)
         
-        if !isSpecial{
-            
+        if (!isSpecial){
             decorate(letter: letter, multiplier: multiplier, value: String(letterValue))
-            
         }
-            
         else{
             decorateSpecial(identifier: letter)
-            
         }
-        
         setPosition(boardFrame: boardFrame)
-        
     }
     
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    
+    required init?(coder aDecoder: NSCoder) {super.init(coder: aDecoder)}
 
     
     func rotate(){
         
         self.transform = CGAffineTransform(rotationAngle: CGFloat(rotationAngle * Double.pi/180.0))
-        
-        
         /*if (self.letter == "COIN"){
             var t  = CATransform3DMakeRotation(CGFloat(CGFloat(rotationAngle * M_PI_2/90.0)), 0.2, 0.3, 0.2)
             
@@ -116,12 +95,9 @@ class LetterView: UIButton {
             //self.layer.anchorPoint = CGPoint(x:1, y:1)
             self.layer.transform = t
         } */
-
     }
     
-    func scale(dx: Double, dy: Double){
-        self.transform = CGAffineTransform(scaleX: CGFloat(dx), y: CGFloat(dy))
-    }
+    func scale(dx: Double, dy: Double) {self.transform = CGAffineTransform(scaleX: CGFloat(dx), y: CGFloat(dy))}
     
     func getCharValue(char : String) -> Int{
         
@@ -154,20 +130,13 @@ class LetterView: UIButton {
             return 2
         case char where char == "CK":
             return 6
-            
-            
         default:
             return 0
         }
-        
-        
-    }
+      }
     
-    func getChars() -> String {
-        return letter;
-    }
-    
-    
+    func getChars() -> String {return letter;}
+
     
    // override func intrinsicContentSize() -> CGSize {
    //     return CGSize(width: 240, height: 44)
@@ -207,6 +176,7 @@ class LetterView: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: -3)
     }
     
+    
     func setRandom( boardFrame : CGRect){
         
         // randomize seed - REMOVE IF WANT REPEATABLE random values
@@ -214,7 +184,6 @@ class LetterView: UIButton {
         //srand(UInt32(time(nil)))
     
         // select random letter
-    
         var letterFrequency = [90, 20, 25, 40, 120, 20, 26, 20, 90, 10, 10, 40, 20, 60, 80, 20, 8, 60, 50, 60, 40, 20, 20, 10, 20, 10 /* Z */, 5, 10 , 5, 2 , 3, 9 /* ? */, 5, 9, 5, 7, 3]
         
         var allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "QU", "ED", "ING", "CK", "ER", "?", "*", "BOOM", "SNOW", "COIN", "PAINT"]
@@ -224,13 +193,11 @@ class LetterView: UIButton {
         }
         
         let r = Int(arc4random_uniform(UInt32(letterFrequency[letterFrequency.count-1] + 1)))
-
         
         var i = 0
         while (letterFrequency[i] < r){
             i += 1
         }
-               
 
         letter = allLetters[i]
         
@@ -238,10 +205,7 @@ class LetterView: UIButton {
             self.isSpecial = true
             return
         }
-        
         setWordMult()
-        
-    
     }
     
     
@@ -250,29 +214,22 @@ class LetterView: UIButton {
         // set random velocity
         
         // set random velocity angle and velocity component
-        
         let initialVelocityAngle = drand48() * 360
-        
         velocity = (initialVelocity * cos(initialVelocityAngle), initialVelocity * sin (initialVelocityAngle))
-        
+
         // set initial rotation angle
-        
         rotationAngle = drand48() * 360
         
         // set angular velocity
-        
         angularVelocity = (drand48() > 0.5) ? 1 : -1
         
         // how many times it bumps against the wall
         maximumAge = 1 + Int(arc4random_uniform(3))
-    
-        
     }
     
     
     //Function for decorating normal letter Tiles
     func decorate( letter: String!, multiplier: Int, value: String = ""){
-        
         
         let fontCol = [EffectsController.DARK_BLUE_COLOR,
                        UIColor(red: CGFloat(1.0), green: CGFloat(0.2745), blue: CGFloat(0), alpha: CGFloat(1.0)),
@@ -301,21 +258,14 @@ class LetterView: UIButton {
         
         let attributedText = NSMutableAttributedString(string:letter, attributes: attrs1)
         
-        
-        
         let attrs2 : [NSAttributedString.Key : Any] = [NSAttributedString.Key(rawValue: NSAttributedString.Key.font.rawValue): UIFont(name: "HelveticaNeue-Bold", size: 10)!, NSAttributedString.Key(rawValue: NSAttributedString.Key.baselineOffset.rawValue): -5 as AnyObject, NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): fontCol[multiplier-1]]
         
-        
-        if(value != ""){
-            attributedText.append(NSAttributedString(string: value, attributes: attrs2))
-        }
+        if(value != "") {attributedText.append(NSAttributedString(string: value, attributes: attrs2))}
 
         self.backgroundColor = col[multiplier-1]
         self.layer.borderColor = borderCol[multiplier - 1].cgColor
         self.layer.shadowColor = shadowCol[multiplier-1].cgColor
         self.setAttributedTitle(attributedText, for: UIControl.State.normal)
-        
-
     }
     
     func incrementAge() -> Bool{
@@ -323,9 +273,7 @@ class LetterView: UIButton {
         return true
     }
     
-    func isAged() -> Bool{
-        return age >= maximumAge
-    }
+    func isAged() -> Bool {return age >= maximumAge}
 
     
     func setWordMult(){
@@ -345,81 +293,66 @@ class LetterView: UIButton {
     }
     
     
-    
-    
     func addEmitter( birthRate : Int = 1, vel: Int = 1){
         
-         
-         let emitter = CAEmitterLayer()
-         emitter.emitterPosition = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
-         emitter.emitterSize = self.bounds.size
-         emitter.emitterMode = CAEmitterLayerEmitterMode.outline
-        
+        let emitter = CAEmitterLayer()
+        emitter.emitterPosition = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
+        emitter.emitterSize = self.bounds.size
+        emitter.emitterMode = CAEmitterLayerEmitterMode.outline
         
         emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
+
+        self.layer.addSublayer(emitter)
         
-        
-         self.layer.addSublayer(emitter)
-        
-        
-        
-         let texture:UIImage? = UIImage(named:"Spark")
+        let texture:UIImage? = UIImage(named:"Spark")
          //assert(texture != nil, "particle image not found")
          
          //3
-         let emitterCell = CAEmitterCell()
+        let emitterCell = CAEmitterCell()
          
          //4
         emitterCell.contents = texture!.cgImage
          
          //5
-         emitterCell.name = "cell"
+        emitterCell.name = "cell"
          
          //6
-         emitterCell.birthRate = 100 * Float(birthRate)
-         emitterCell.lifetime = 0.5
+        emitterCell.birthRate = 100 * Float(birthRate)
+        emitterCell.lifetime = 0.5
          
          //7
-         emitterCell.blueRange = 0.33
-         //emitterCell.greenRange = 0.33
-         // emitterCell.redRange = 0.33
+        emitterCell.blueRange = 0.33
+        //emitterCell.greenRange = 0.33
+        // emitterCell.redRange = 0.33
         
-          //emitterCell.blueSpeed = -0.33
-         emitterCell.greenSpeed = -0.33
-         //emitterCell.redSpeed = -0.33
+        //emitterCell.blueSpeed = -0.33
+        emitterCell.greenSpeed = -0.33
+        //emitterCell.redSpeed = -0.33
          
-         //8
-         emitterCell.velocity = CGFloat(100 * vel)
-         emitterCell.velocityRange = CGFloat(10 * vel)
+        //8
+        emitterCell.velocity = CGFloat(100 * vel)
+        emitterCell.velocityRange = CGFloat(10 * vel)
         
         //emitterCell.speed = 200
         
-         
-         //9
-         emitterCell.scaleRange = 0.2
-         emitterCell.scaleSpeed = -0.1
-         emitterCell.scale = 0.1
-         emitterCell.yAcceleration = 100 //* (-CGFloat(velocity.y))
-         emitterCell.xAcceleration = 0 //100 *  (-CGFloat(velocity.x))
+        //9
+        emitterCell.scaleRange = 0.2
+        emitterCell.scaleSpeed = -0.1
+        emitterCell.scale = 0.1
+        emitterCell.yAcceleration = 100 //* (-CGFloat(velocity.y))
+        emitterCell.xAcceleration = 0 //100 *  (-CGFloat(velocity.x))
         
-         emitterCell.spin = CGFloat(angularVelocity)
-        
-        
+        emitterCell.spin = CGFloat(angularVelocity)
         
         emitterCell.emissionLatitude = -CGFloat(velocity.x)
         emitterCell.emissionLongitude = -CGFloat(velocity.y)
         
-         //10
-        
-        
+        //10
         emitterCell.emissionRange = CGFloat(2*Double.pi)
          
-         //11
-         emitter.emitterCells = [emitterCell]
-         
-         
+        //11
+        emitter.emitterCells = [emitterCell]
     }
-    
     
     
     func addBallEmitter( birthRate : Int = 1, vel: Int = 1){
@@ -429,9 +362,7 @@ class LetterView: UIButton {
         emitter.emitterSize = self.bounds.size
         emitter.emitterMode = CAEmitterLayerEmitterMode.outline
         
-        
         emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
-        
         
         self.layer.addSublayer(emitter)
         
@@ -476,30 +407,21 @@ class LetterView: UIButton {
         
         emitterCell.spin = CGFloat(angularVelocity)
         
-        
-        
         emitterCell.emissionLatitude = -CGFloat(velocity.x)
         emitterCell.emissionLongitude = -CGFloat(velocity.y)
         
         //10
-        
-        
         emitterCell.emissionRange = CGFloat(Double.pi * 2)
         
         //11
         emitter.emitterCells = [emitterCell]
-        
-        
     }
     
-    func hasMultiplier() ->Bool {
-        return !self.isSpecial || self.letter == "?"
-    }
+    func hasMultiplier() ->Bool {return !self.isSpecial || self.letter == "?"}
     
     func updateMultiplier(_ mult : Int){
         
         if hasMultiplier(){
-           
             self.multiplier = mult
             
             if (self.letter == "?"){
@@ -509,7 +431,6 @@ class LetterView: UIButton {
                 self.decorate(letter: self.letter, multiplier: mult, value: String(self.letterValue))
             }
         }
-        
     }
     
     func updateLetter( char : String, value : Int = -1){
@@ -530,10 +451,7 @@ class LetterView: UIButton {
         }
         
         decorate(letter: letter, multiplier: self.multiplier, value: String(self.letterValue))
-        
     }
-    
-    
     
     func updateCoordinates( x : CGFloat, y : CGFloat, speed : Double){
         
@@ -543,9 +461,9 @@ class LetterView: UIButton {
         velocity.y *= speed
     }
     
-    
     func decorateSpecial( identifier: String! ){
-        if identifier == "*"{
+        switch identifier {
+        case "*":
             self.backgroundColor = UIColor.clear
             
             //self.layer.borderColor = UIColor.cyanColor().CGColor
@@ -555,35 +473,24 @@ class LetterView: UIButton {
             
             self.setImage(image, for: UIControl.State.normal)
             self.transform = CGAffineTransform(scaleX: 0.67, y: 0.83)
-            
-        }
-        else if identifier == "BOOM"{
-            
-                self.backgroundColor = UIColor.clear
+        
+        case "BOOM":
+            self.backgroundColor = UIColor.clear
                 
-                //self.layer.borderColor = UIColor.cyanColor().CGColor
-                // self.layer.shadowColor = UIColor.blueColor().CGColor
-                self.layer.borderWidth = 0
-                let image = UIImage(named: "bomb2") as UIImage?
-                
+            //self.layer.borderColor = UIColor.cyanColor().CGColor
+            // self.layer.shadowColor = UIColor.blueColor().CGColor
+            self.layer.borderWidth = 0
+            let image = UIImage(named: "bomb2") as UIImage?
+            
             self.setImage(image, for: UIControl.State.normal)
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                addBombEmitter()
-
-                
-        }
-        else if identifier == "?"{
-            
+            addBombEmitter()
+        case "?":
             setWordMult()
             decorate(letter: "?", multiplier: multiplier)
-            
-            
-        }
         
-        else if identifier == "SNOW"{
-            
+        case "SNOW":
             self.backgroundColor = UIColor.clear
-            
             //self.layer.borderColor = UIColor.cyanColor().CGColor
             // self.layer.shadowColor = UIColor.blueColor().CGColor
             self.layer.borderWidth = 0
@@ -591,23 +498,15 @@ class LetterView: UIButton {
             
             self.setImage(image, for: UIControl.State.normal)
             self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-            
-            
-        }
         
-        else if identifier == "COIN"{
+        case "COIN":
             self.backgroundColor = UIColor.clear
             self.layer.shadowColor = UIColor.clear.cgColor
          
             self.layer.borderWidth = 0
-
-            
             self.setImage(UIImage(named: "goldball"), for: UIControl.State.normal)
             //self.transform = CGAffineTransformMakeScale(1.25, 1.25)
             self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-            
-            
-            
             //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
            
             self.velocity.x *= 4.5
@@ -615,10 +514,7 @@ class LetterView: UIButton {
             self.maximumAge = Int(arc4random_uniform(3))
             self.angularVelocity = 3.5 * self.angularVelocity
             addBallEmitter()
-            
-        }
-        
-        else if identifier == "PAINT"{
+        case "PAINT":
             self.backgroundColor = UIColor.clear
             self.layer.shadowColor = UIColor.clear.cgColor
             
@@ -627,20 +523,18 @@ class LetterView: UIButton {
             self.backgroundColor = UIColor.clear
             
             if (arc4random_uniform(10) < 2){
-            
                 self.multiplier = 3
                 self.setImage(UIImage(named: "redPB"), for: UIControl.State.normal)
-            
             }
             else {
                 self.multiplier = 2
                 self.setImage(UIImage(named: "yellowPB"), for: UIControl.State.normal)
             }
-            
             //self.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
-             //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
+        default: break
         }
-   }
+    }
     
     
     func setPosition( boardFrame : CGRect){
@@ -657,26 +551,19 @@ class LetterView: UIButton {
             x = (velocity.x > 0) ? boardFrame.minX : boardFrame.maxX
         }
         self.frame = CGRect(x: x, y: y, width: LetterView.TILE_SIDE, height: LetterView.TILE_SIDE)
-        
-        
     }
     
     
     func addBombEmitter( birthRate : Int = 1, vel: Int = 1){
-        
         
         let emitter = CAEmitterLayer()
         emitter.emitterPosition = CGPoint(x: self.bounds.size.width*1.01 , y: 0)
         emitter.emitterSize = CGSize(width: 8.0, height: 8.0)
         emitter.emitterMode = CAEmitterLayerEmitterMode.outline
         
-        
         emitter.emitterShape = CAEmitterLayerEmitterShape.rectangle
         
-        
         self.layer.addSublayer(emitter)
-        
-        
         
         let texture:UIImage? = UIImage(named:"Spark")
         //assert(texture != nil, "particle image not found")
@@ -709,7 +596,6 @@ class LetterView: UIButton {
         
         //emitterCell.speed = 200
         
-        
         //9
         emitterCell.scaleRange = 0.2
         emitterCell.scaleSpeed = -0.1
@@ -723,13 +609,11 @@ class LetterView: UIButton {
         emitterCell.emissionLongitude = -CGFloat(velocity.y)
         
         //10
-        
         emitterCell.emissionRange = CGFloat(2*Double.pi)
         
         //11
         emitter.emitterCells = [emitterCell]
     }
-
 }
 
 

@@ -32,7 +32,6 @@ class HelpController: UIViewController {
         
         var attriburedString = NSMutableAttributedString(string:textView.text, attributes: attrs1)
         
-        
         attriburedString = insertImage(str: attriburedString, img: "Submit", imgscale: 40, replaced: "PP")
         attriburedString = insertImage(str: attriburedString, img: "snowflake", imgscale: 7, replaced: "NN")
         attriburedString = insertImage(str: attriburedString, img: "Backspace", imgscale: 12, replaced: "BB")
@@ -44,8 +43,6 @@ class HelpController: UIViewController {
         attriburedString = insertImage(str: attriburedString, img: "redPB", imgscale: 15, replaced: "RR")
         attriburedString = insertImage(str: attriburedString, img: "yellowPB", imgscale: 15, replaced: "YY")
         textView.attributedText = attriburedString
-        
-        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -71,31 +68,18 @@ class HelpController: UIViewController {
         
     }
     
-
-    
     func insertImage(str : NSMutableAttributedString, img: String, imgscale: CGFloat, replaced : String) -> NSMutableAttributedString{
-        
    
-    let snowflake = NSTextAttachment()
-    snowflake.image = UIImage(named: img)
+        let snowflake = NSTextAttachment()
+        snowflake.image = UIImage(named: img)
         snowflake.image = UIImage(cgImage: snowflake.image!.cgImage!, scale: imgscale, orientation: .up)
-    let attachmentString = NSAttributedString(attachment: snowflake)
-    
-    
-    let s = str.string as NSString
-    
-    
-    
+        let attachmentString = NSAttributedString(attachment: snowflake)
+        
+        let s = str.string as NSString
         let r = s.range(of: replaced)
-    
-    
-        str.replaceCharacters(in: r, with: attachmentString)
-    
-        return str
-    
-    }
-    
-    
-    
 
+        str.replaceCharacters(in: r, with: attachmentString)
+
+        return str
+   }
 }

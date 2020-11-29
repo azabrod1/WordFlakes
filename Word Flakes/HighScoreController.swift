@@ -3,7 +3,6 @@
 //  Word Flakes
 //
 
-
 import UIKit
 
 class HighScoreController: UIViewController {
@@ -62,14 +61,9 @@ class HighScoreController: UIViewController {
     }
     
     
-
-    
-    
-    
     override func viewDidLayoutSubviews() {
         scoresText.setContentOffset(CGPoint.zero, animated: false)
     }
-    
     
     
     @IBAction func menuReturnPressed(_ sender: UIButton) {
@@ -83,9 +77,4 @@ class HighScoreController: UIViewController {
     @IBAction func menuReturnTouchedDown(_ sender: UIButton) {
         EffectsController.animateButtonPress(sender)
     }
-    
-        
- 
-    
-
-}
+ }
