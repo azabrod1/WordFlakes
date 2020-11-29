@@ -2,30 +2,20 @@
 //  WordView.swift
 //  Word Flakes
 //
-
-
 import UIKit
 
 class WordView: UIView {
-
-    
     //var playButton : UIButton?
-    
-    
     //var label = UILabel()
     
     let lengthBonus = [0, 0, 0, 0, 0, 5, 30, 75, 125, 225, 350, 500, 750, 1500, 2000, 5000, 7500, 10000]
-    
-    //                [0, 1, 2, 3, 4, 5, 6 , 7,  8,   9,    10   11  12   13   14    15   16  17]
-    
+    //                [0, 1, 2, 3, 4, 5, 6 , 7,  8,   9,    10   11  12   13   14     15    16    17]
     
     var maxDisplayLength = 8 // number of characters to display
     
     var tileRack = [LetterView]()
     private var strWord = ""
     var dictionary = Set<String>()
-    
-    
     
     required init? (coder aDecoder :NSCoder){
         super.init(coder: aDecoder)
@@ -112,11 +102,7 @@ class WordView: UIView {
     func loadDictionary() -> Bool{
         
         let fileLocation  = Bundle.main.path(forResource: "wordList", ofType: "txt")!
-        
-        
         let text : String
-        
-        
         do{
             text = try String(contentsOfFile: fileLocation)
         }
@@ -124,10 +110,7 @@ class WordView: UIView {
             text = ""
             return false
         }
-        
         dictionary = Set(text.components(separatedBy: "\n"))
-        
-        
         return true
         
     }
@@ -186,10 +169,7 @@ class WordView: UIView {
                 x = x - adj
                 
             }
-            
             button.frame = CGRect(x: x, y: 0, width: button.frame.width , height: button.frame.height )
-            
-            
             button.layer.shadowOpacity = 0.3
  
             
@@ -224,14 +204,9 @@ class WordView: UIView {
             //animation ends
             }, completion: {(i : Bool) in
                 // after animation
-                
                 letter.removeFromSuperview()
-                
                 letter.isHidden = true
-                
-                                
-                
-        }) // end of completion
+          }) // end of completion
         
         
         self.strWord = ""
@@ -261,7 +236,6 @@ class WordView: UIView {
                
             // animation starts
                 letter.frame = letter.frame.offsetBy(dx: 0, dy: 50)
-            
                 letter.backgroundColor = UIColor.clear
             }
             
@@ -281,15 +255,8 @@ class WordView: UIView {
     }
     
     
-    func isWord() -> Bool{
-        
-        if(dictionary.contains(strWord) && strWord.count > 2){
-            
-            return true
-        }
-        
-        return false
-        
+    func isWord() -> Bool {
+        return (dictionary.contains(strWord) && strWord.count > 2)
     }
     
     func count() -> Int {return tileRack.count}
@@ -304,7 +271,7 @@ class WordView: UIView {
         
     }
     
-    func bonus() -> Int{ return lengthBonus[min(strWord.count, lengthBonus.count-1)]}
+    func bonus() -> Int{return lengthBonus[min(strWord.count, lengthBonus.count-1)]}
     
     
 }

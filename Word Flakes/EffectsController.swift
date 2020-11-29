@@ -2,9 +2,7 @@
 //  EffectsController.swift
 //  Word Flakes
 //
-//  Created by Tatyana kudryavtseva on 05/08/16.
-//  Copyright © 2016 Organized Chaos. All rights reserved.
-//
+
 
 import UIKit
 import Foundation
@@ -18,8 +16,6 @@ class EffectsController: UIView {
     static let LABEL_TEXT_COLOR = UIColor(red: 0.357258, green: 0.740995, blue: 1, alpha: 1)
     static let DARK_BLUE_COLOR = UIColor(red: 0, green: 0, blue: 0.453 , alpha: 1.0)
     static let ORANGE_COLOR = UIColor(red: 195/255, green: 78/255, blue: 22/255 , alpha: 1.0)
-
-
     
     // MARK: properties
     
@@ -33,11 +29,7 @@ class EffectsController: UIView {
     let flare = CAEmitterCell()
     let FIREWORK_BIRTHRATE = 1300
     
-    
-    
-    
-    
-    
+   
     init(mainView : UIView) {
         super.init(frame:  CGRect(x: 10, y: 10, width: 10, height: 10))
         
@@ -160,84 +152,51 @@ class EffectsController: UIView {
         
         //11
         launcher.emitterCells = [flare]
-        
-        
     }
     
     
-    
-    func smallCelebrate(){
-        celebrate(birthRate: 200)
-        
-    }
-    
-    
+    func smallCelebrate(){celebrate(birthRate: 200)}
+
     
     func celebrate( birthRate : Int? = nil){
         let spawnRate = (birthRate != nil) ? birthRate : FIREWORK_BIRTHRATE
         
         UIView.animate (withDuration: 0.01, animations: {
             self.launcher.setValue(spawnRate, forKeyPath: "emitterCells.cell.birthRate")
-            
             }, completion: { (i : Bool) in
-                
                 self.launcher.setValue(0, forKeyPath: "emitterCells.cell.birthRate")
-                
-            }
-            
-        )
-        
+            })
     }
-    
-    
-    
     
     func highScoreCelebrateOn( birthRate : Int? = 30){
         self.launcher.setValue(birthRate, forKeyPath: "emitterCells.cell.birthRate")
         self.launcher.setValue(CGFloat(100), forKeyPath: "emitterCells.cell.velocity")
         self.launcher.setValue(5,             forKeyPath: "emitterCells.cell.lifetime")
-
-        
     }
-    
-    
-    
+ 
     
     func highScoreCelebrateOff(){
         self.launcher.setValue(0, forKeyPath: "emitterCells.cell.birthRate")
         self.launcher.setValue(CGFloat(1000), forKeyPath: "emitterCells.cell.velocity")
         self.launcher.setValue(1.7,             forKeyPath: "emitterCells.cell.lifetime")
-        
-        
     }
-    
-
-    
+  
     // MARK: statics
     
-    static func easySound( m : MainController){
-        m.ipod.play("menu_click")
-            
-   
-    }
+    static func easySound( m : MainController){m.ipod.play("menu_click")}
     
     @objc
     static func animateButtonPress(_ b : UIButton){
-        
-        
+  
         UIView.animate( withDuration: 0.1, animations: {
             b.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-            
-            
             }, completion: {(i : Bool) in
-                b.transform = CGAffineTransform.identity})
-        
-       
-        
+                b.transform = CGAffineTransform.identity
+        })
     }
     
     
-    static func formatButton( b : UIButton, orange : Bool = false){
+    static func formatButton(b : UIButton, orange : Bool = false){
         
         //b.backgroundColor = UIColor.whiteColor()
         if (orange){
@@ -254,14 +213,9 @@ class EffectsController: UIView {
         } else {
             b.layer.borderColor = UIColor(red: 40/255.0, green:40/255.0, blue: 255/255.0, alpha: 1.0).cgColor
         }
-        
-        
         b.layer.cornerRadius = 10
-
-        
         b.layer.masksToBounds = true
         
-        //
         //gradient color
         let btnGradient = CAGradientLayer()
         btnGradient.frame = b.bounds
@@ -270,15 +224,7 @@ class EffectsController: UIView {
              UIColor(red: 20/255, green:20/255, blue: 20/255, alpha: 1).cgColor]
         
         btnGradient.masksToBounds = true
-        
         b.layer.insertSublayer(btnGradient, at: 0)
-        
-        
     }
-    
-
-    
-    
-    
     
 }
