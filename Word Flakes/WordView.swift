@@ -59,7 +59,7 @@ class WordView: UIView {
                 for letter in temp {
                     
                     letter.addEmitter(birthRate: 3)
-                    letter.frame.offsetBy(dx: (self.superview?.frame.width)!/2,
+                    letter.frame = letter.frame.offsetBy(dx: (self.superview?.frame.width)!/2,
                         dy: (-(self.superview?.frame.height)!-2*letter.frame.height))
                     letter.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
                     letter.setTitle("", for: UIControl.State.normal)
@@ -170,7 +170,7 @@ class WordView: UIView {
                 for l in self.tileRack {
                 
                     if (l != button){
-                        l.frame.offsetBy(dx: -(l.frame.width  + 3.0), dy: 0)
+                        l.frame = l.frame.offsetBy(dx: -(l.frame.width  + 3.0), dy: 0)
                     }
                 }
             }
@@ -211,13 +211,13 @@ class WordView: UIView {
         UIView.animate( withDuration: 1, animations: {
             
             // animation starts
-            letter.frame.offsetBy(dx: 0, dy: 50)
+            letter.frame = letter.frame.offsetBy(dx: 0, dy: 50)
             
             letter.backgroundColor = UIColor.clear
             
             if (self.tileRack.count >= self.maxDisplayLength){
                 for l in self.tileRack {
-                    l.frame.offsetBy(dx: +(l.frame.width  + 3.0), dy: 0)
+                    l.frame = l.frame.offsetBy(dx: +(l.frame.width  + 3.0), dy: 0)
                 }
             }
             
@@ -260,7 +260,7 @@ class WordView: UIView {
             for letter in tempRack{
                
             // animation starts
-                letter.frame.offsetBy(dx: 0, dy: 50)
+                letter.frame = letter.frame.offsetBy(dx: 0, dy: 50)
             
                 letter.backgroundColor = UIColor.clear
             }

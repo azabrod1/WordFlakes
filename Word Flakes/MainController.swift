@@ -1174,8 +1174,6 @@ class MainController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier:"LetterChooserController") as! LetterChooserController
         
-        
-        
         vc.mainController = self
         
         vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
@@ -1184,8 +1182,6 @@ class MainController: UIViewController {
         
         //self.presentViewController(vc, animated: true, completion: nil)
 
-        
-        
         vc.view.frame = CGRect(x: 30, y: 60, width: self.view.frame.width - 60, height: 405)
         
         vc.view.transform = CGAffineTransform(scaleX:0.2, y:0.2)
@@ -1282,9 +1278,7 @@ class MainController: UIViewController {
     func homeButtonPress(_ notification : NSNotification){
         if gameState == GameState.GameStarted{
             pausePressed(lblPause)
-            
         }
-        
     }
     
     

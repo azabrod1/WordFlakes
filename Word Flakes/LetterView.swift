@@ -29,15 +29,8 @@ class LetterView: UIButton {
     
     
     // properties
-    
-
-    
-    let initialVelocity = 4.5 
-    
-    
+    let initialVelocity = 4.5
     var velocity : (x: Double, y: Double)!
-    
-    
     var age = 0 as Int
     
     var maximumAge : Int!
@@ -337,7 +330,7 @@ class LetterView: UIButton {
     
     func setWordMult(){
         // word multiplier
-        let r = Int( arc4random_uniform(550))
+        let r = Int(arc4random_uniform(550))
         
         if (r % 15 == 0){
             multiplier = 2
@@ -430,10 +423,7 @@ class LetterView: UIButton {
     
     
     func addBallEmitter( birthRate : Int = 1, vel: Int = 1){
-        
-        
-        
-        
+
         let emitter = CAEmitterLayer()
         emitter.emitterPosition = CGPoint(x: self.bounds.size.width/2, y: self.bounds.size.height/2)
         emitter.emitterSize = self.bounds.size
@@ -444,8 +434,6 @@ class LetterView: UIButton {
         
         
         self.layer.addSublayer(emitter)
-        
-        
         
         let texture:UIImage? = UIImage(named:"Spark")
         //assert(texture != nil, "particle image not found")
@@ -650,18 +638,9 @@ class LetterView: UIButton {
             }
             
             //self.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10)
-            
-            
-            
-            //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
-            
-            
-            
+             //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
         }
-
-        
-        
-    }
+   }
     
     
     func setPosition( boardFrame : CGRect){
@@ -677,7 +656,6 @@ class LetterView: UIButton {
             y = CGFloat(drand48()) * boardFrame.height + boardFrame.minY
             x = (velocity.x > 0) ? boardFrame.minX : boardFrame.maxX
         }
-                
         self.frame = CGRect(x: x, y: y, width: LetterView.TILE_SIDE, height: LetterView.TILE_SIDE)
         
         
@@ -750,12 +728,8 @@ class LetterView: UIButton {
         
         //11
         emitter.emitterCells = [emitterCell]
-        
-        
     }
-    
-    
-    
+
 }
 
 

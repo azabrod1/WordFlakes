@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Word Flakes/MainController.swift"
-            timestampString = "628297578.379836"
+            timestampString = "628342721.657258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1323"
-            endingLineNumber = "1323"
+            startingLineNumber = "1314"
+            endingLineNumber = "1314"
             landmarkName = "displayBonus()"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,12 +42,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Word Flakes/EffectsController.swift"
-            timestampString = "628297578.380254"
+            timestampString = "628342721.657343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "setUpCloud(mainView:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Word Flakes/WordView.swift"
+            timestampString = "628342721.657397"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "addLetter(button:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Word Flakes/WordView.swift"
+            timestampString = "628342721.657775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "addLetter(button:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Letterstorm.WordView.addLetter(button: Letterstorm.LetterView) -&gt; ()"
+                  moduleName = "Letterstorm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tatyana/Documents/Documents%20-%20Puffin/workspace/Word%20Flakes%209%202/Word%20Flakes/WordView.swift"
+                  timestampString = "628342468.712346"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "3649">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Letterstorm.WordView.addLetter(button: Letterstorm.LetterView) -&gt; ()"
+                  moduleName = "Letterstorm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Tatyana/Documents/Documents%20-%20Puffin/workspace/Word%20Flakes%209%202/Word%20Flakes/WordView.swift"
+                  timestampString = "628342468.71427"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "137"
+                  endingLineNumber = "137"
+                  offsetFromSymbolStart = "282">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Word Flakes/WordView.swift"
+            timestampString = "628342721.658033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "addLetter(button:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
