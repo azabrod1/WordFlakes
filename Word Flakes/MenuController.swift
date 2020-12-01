@@ -53,7 +53,6 @@ class MenuController: UIViewController {
         
         EffectsController.easySound(m:mainController)
         
-        
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -61,10 +60,13 @@ class MenuController: UIViewController {
         
         self.dismiss(animated:true, completion: {});
         
+        let ipod  = BoomBox()
+        ipod.shutUp(file:"dramatic", type: "mp3")
+        ipod.shutUp(file:"forSnow", type: "mp3")
+        
         EffectsController.easySound(m:mainController)
         
-            mainController.run()
-    
+        mainController.run()
     
     }
     
@@ -75,7 +77,6 @@ class MenuController: UIViewController {
         self.dismiss(animated:true, completion: {});
         mainController.ipod.resumeAll()
         mainController.gameState = mainController.gameStateBeforePause
-        
     }
     
     
@@ -94,9 +95,7 @@ class MenuController: UIViewController {
     }
     
     override var prefersStatusBarHidden: Bool {
-        get {
-            return true
-        }
+        get {return true}
     }
     
     override func viewDidLoad() {
@@ -111,9 +110,7 @@ class MenuController: UIViewController {
             //resumeButton.enabled = true
             restartButton.setTitle("Restart", for: UIControl.State())
             //resumeButton.alpha = 1.0
-
-            
-        }
+       }
         else {
             //resumeButton.enabled = false
             restartButton.setTitle("Start", for: UIControl.State())
@@ -127,11 +124,4 @@ class MenuController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    
-
-    
-    
-    
 }

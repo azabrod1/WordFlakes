@@ -183,7 +183,7 @@ class EffectsController: UIView {
   
     // MARK: statics
     
-    static func easySound( m : MainController){m.ipod.play("menu_click")}
+    static func easySound(m : MainController) {m.ipod.play("menu_click")}
     
     @objc
     static func animateButtonPress(_ b : UIButton){
