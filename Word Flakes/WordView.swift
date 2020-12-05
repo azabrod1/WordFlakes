@@ -247,7 +247,6 @@ class WordView: UIView {
                     letter.isHidden = true
                 }
                 
-                
         }) // end of completion
         
     
@@ -262,10 +261,15 @@ class WordView: UIView {
     func count() -> Int {return tileRack.count}
     
     func multiplier() ->Int {
+        
+      //  print( (UIScreen.main.bounds.width * UIScreen.main.bounds.width + UIScreen.main.bounds.height * UIScreen.main.bounds.height).squareRoot() );
+        
         var mult =  1
         
         for letter in self.tileRack{
-            mult *= letter.multiplier
+            if( letter.multiplier > 1){
+                mult *= letter.multiplier;
+            }
         }
         return mult
         

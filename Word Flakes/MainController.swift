@@ -245,6 +245,13 @@ class MainController: UIViewController {
         vc.mainController = self
         
         vc.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
+        
+        vc.presentationController?.delegate = vc
+
+        
+        
+      //  vc.dismiss(animated: true, completion: { ()-> Void in self.gameState = self.gameStateBeforePause })
+      //  vc.presentationControllerDidDismiss
     
         self.present(vc, animated: true, completion: nil)
     }

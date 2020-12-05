@@ -12,7 +12,7 @@ class LetterChooserController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var allLetters = Array(65...90).map {String(UnicodeScalar($0))}
+        let allLetters = Array(65...90).map {String(UnicodeScalar($0))}
         
         var letter : LetterView!
         

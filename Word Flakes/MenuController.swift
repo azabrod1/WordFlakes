@@ -6,8 +6,8 @@
 
 import UIKit
 
-class MenuController: UIViewController {
-
+class MenuController: UIViewController, UIAdaptivePresentationControllerDelegate {
+    
     // MARK: controls
     
     @IBOutlet weak var resumeButton: UIButton!
@@ -17,15 +17,18 @@ class MenuController: UIViewController {
     @IBOutlet weak var InstructionsButton: UIButton!
     
     @IBOutlet weak var highScoreButton: UIButton!
+
     
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        resumeGame();
+    }
     
     // MARK: properties
     
     var mainController : MainController!
     
     // MARK: control actions
-    
- 
+     
     @IBAction func resumeTouchedDown(_ sender: UIButton) {
         EffectsController.animateButtonPress(sender)
     }
@@ -74,11 +77,14 @@ class MenuController: UIViewController {
         
         EffectsController.easySound(m:mainController)
         
+        resumeGame();
+    }
+    
+    func resumeGame(){
         self.dismiss(animated:true, completion: {});
         mainController.ipod.resumeAll()
         mainController.gameState = mainController.gameStateBeforePause
     }
-    
     
     @IBAction func instructionsPressed(_ sender: UIButton) {
         

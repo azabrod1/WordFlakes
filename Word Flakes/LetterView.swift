@@ -184,9 +184,9 @@ class LetterView: UIButton {
         //srand(UInt32(time(nil)))
     
         // select random letter
-        var letterFrequency = [90, 20, 25, 40, 120, 20, 26, 20, 90, 10, 10, 40, 20, 60, 80, 20, 8, 60, 50, 60, 40, 20, 20, 10, 20, 10 /* Z */, 5, 10 , 5, 2 , 3, 9 /* ? */, 5, 9, 5, 7, 3]
+        var letterFrequency = [90, 20, 25, 40, 120, 20, 26, 20, 90, 10, 10, 40, 20, 60, 80, 20, 8, 60, 50, 60, 40, 20, 20, 10, 20, 10 /* Z */, 5, 10 , 5, 2 , 3, 9 /* ? */, 5, 9, 5, 7, 5]
         
-        var allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "QU", "ED", "ING", "CK", "ER", "?", "*", "BOOM", "SNOW", "COIN", "PAINT"]
+        let allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "QU", "ED", "ING", "CK", "ER", "?", "*", "BOOM", "SNOW", "COIN", "PAINT"]
 
         for j in (0..<(letterFrequency.count-1)){
             letterFrequency[j+1] += letterFrequency[j]
