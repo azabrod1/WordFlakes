@@ -370,7 +370,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScores" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-71-ixG">
-                                <rect key="frame" x="20" y="39" width="374" height="90.500000000000028"/>
+                                <rect key="frame" x="20" y="39" width="374" height="90.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kg4-71-ixG" secondAttribute="height" multiplier="517:125" id="Omd-Ro-eaE"/>
                                 </constraints>
