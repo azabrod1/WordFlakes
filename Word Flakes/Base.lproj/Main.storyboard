@@ -370,7 +370,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScores" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-71-ixG">
-                                <rect key="frame" x="20" y="39" width="374" height="90.5"/>
+                                <rect key="frame" x="20" y="39" width="374" height="90.500000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kg4-71-ixG" secondAttribute="height" multiplier="517:125" id="Omd-Ro-eaE"/>
                                 </constraints>
@@ -386,10 +386,10 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVw-Dr-67o">
-                                <rect key="frame" x="161.5" y="806" width="91" height="36"/>
+                                <rect key="frame" x="138.5" y="806" width="137" height="36"/>
                                 <color key="backgroundColor" red="0.088000801282051122" green="0.088000801282051122" blue="0.088000801282051122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="2Uu-dU-lgF"/>
+                                    <constraint firstAttribute="width" constant="137" id="2Uu-dU-lgF"/>
                                     <constraint firstAttribute="height" constant="38" id="iUm-sd-6BM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
