@@ -35,10 +35,10 @@ class HighScoreController: UIViewController {
             }
         }
         
-            scoresText.text = toDisplay
+        scoresText.text = toDisplay
         scoresText.isHidden = false
         scoresText.isEditable = false
-            scoresText.allowsEditingTextAttributes = false
+        scoresText.allowsEditingTextAttributes = false
             
             scoresText.font = UIFont(name: "Noteworthy-Bold" , size: 19)
         scoresText.textColor = UIColor.white

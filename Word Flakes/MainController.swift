@@ -40,7 +40,7 @@ class MainController: UIViewController {
         case GameOver
     }
     
-    let INIT_ENERGY: Double = 10]============\\\okl
+    let INIT_ENERGY: Double = 100
     let EXPONENT   : Double = 0.60
     let TIME_CONST : Double = 0.0095
     let TIME_MULT  : Double = 0.00027
