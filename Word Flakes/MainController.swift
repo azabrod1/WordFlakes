@@ -10,8 +10,6 @@ import Darwin
 
 class MainController: UIViewController {
     
-    
-    
 // MARK: controllers
     
     @IBOutlet weak var wordView: WordView!
@@ -42,8 +40,7 @@ class MainController: UIViewController {
         case GameOver
     }
     
-     
-    let INIT_ENERGY: Double = 100
+    let INIT_ENERGY: Double = 10]============\\\okl
     let EXPONENT   : Double = 0.60
     let TIME_CONST : Double = 0.0095
     let TIME_MULT  : Double = 0.00027
@@ -94,12 +91,16 @@ class MainController: UIViewController {
     }
     
     func decrementEnergy(){
+      //  print((self.view.frame.standardized.width*self.view.frame.standardized.width + self.view.frame.standardized.height*self.view.frame.standardized.height).squareRoot());
+        var expScoreAdj = 1.065
+        if(energy > 750){
+            expScoreAdj = 1.30;
+        }
         
-        let expScoreAdj = 1.065       //( (energy < 1500) ? 0.98 : 1.05 )
         let scoreAdj = pow(energy, expScoreAdj) * ENERGY_MULT
         let delta    = TIME_CONST + power(timeElapsed) * TIME_MULT + scoreAdj
     
-        energy -= delta
+        energy = max(0, energy - delta)
         lblEnergy.text = "Energy: \((Int(energy)))"
     }
     
@@ -110,8 +111,7 @@ class MainController: UIViewController {
         if (wordView.removeLastLetter()) { ipod.play("forDiscardLetters", "mp3")}
         
         displayBonus()
-        // addScore(0, energyAdd: -Double(value) , display: true)
-        //  if wordView.tileRack.count <  playSound("forDiscardLetters", type: "mp3")
+    
     }
     
     @IBAction func playButtonClicked(_ sender: UIButton) {

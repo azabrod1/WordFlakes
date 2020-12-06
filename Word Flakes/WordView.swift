@@ -9,7 +9,6 @@ class WordView: UIView {
     //var label = UILabel()
     
     let lengthBonus = [0, 0, 0, 0, 0, 5, 30, 75, 125, 225, 350, 500, 750, 1500, 2000, 5000, 7500, 10000]
-    //                [0, 1, 2, 3, 4, 5, 6 , 7,  8,   9,    10   11  12   13   14     15    16    17]
     
     var maxDisplayLength = 8 // number of characters to display
     

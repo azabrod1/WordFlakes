@@ -8,8 +8,6 @@ import UIKit
 
 class LetterView: UIButton {
     
-    
-    
     static let TILE_SIDE : CGFloat = 40.0
     static let TILE_OFFSET : CGFloat = 3.0
     static let TILE_SIDE_WITH_OFFSET : CGFloat = TILE_SIDE + TILE_OFFSET
@@ -25,7 +23,7 @@ class LetterView: UIButton {
     var isSpecial = false
     
     // properties
-    let initialVelocity = 4.5
+    let initialVelocity = 5.0
     var velocity : (x: Double, y: Double)!
     var age = 0 as Int
     
@@ -509,8 +507,8 @@ class LetterView: UIButton {
             self.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
             //self.transform = CGAffineTransformMakeScale(1.5, 1.5)
            
-            self.velocity.x *= 4.5
-            self.velocity.y *= 4.5
+            self.velocity.x *= 5.0
+            self.velocity.y *= 5.0
             self.maximumAge = Int(arc4random_uniform(3))
             self.angularVelocity = 3.5 * self.angularVelocity
             addBallEmitter()

@@ -79,9 +79,6 @@ class LetterChooserController: UIViewController {
         })
     }
 
-    
-    
-    
 
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
