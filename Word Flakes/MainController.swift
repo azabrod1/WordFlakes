@@ -53,7 +53,7 @@ class MainController: UIViewController {
     let DUR_SNOWFLAKE : Double = 12
     let COIN_BONUS :   Int  = 250
     
-    let ipod  = BoomBox()
+    let ipod  = BoomBox.ipod()//BoomBox()
     let defaults = UserDefaults.standard
     
     
@@ -423,7 +423,7 @@ class MainController: UIViewController {
         if (gameState != GameState.GameStarted) {return}
         
         if (energy < 15) && (energy > 9){ //Do not call too many times
-            ipod.playIfNotPlaying(file:"dramatic", type: "mp3")
+            ipod.play("dramatic", "mp3", true)
         }
         
         if (energy <= 0){
@@ -565,8 +565,8 @@ class MainController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval:TIME_INT, target:self, selector: #selector(MainController.moveLetters), userInfo: nil, repeats: true)
         
-        ipod.shutUp(file:"dramatic", type: "mp3")
-        ipod.shutUp(file:"forSnow", type: "mp3")
+        ipod.shutUp("dramatic", "mp3")
+        ipod.shutUp("forSnow", "mp3")
         ipod.play("gameOver")
         
         gameOverView.alpha = 0.0
@@ -793,7 +793,7 @@ class MainController: UIViewController {
         snowFlakes.removeAll()
         
         effects.sunshine()
-        ipod.shutUp(file:"forSnow", type: "mp3")
+        ipod.shutUp("forSnow", "mp3")
         
         ipod.play("bomb2")
         
@@ -993,10 +993,10 @@ class MainController: UIViewController {
     
     func adjustVolumes(){
         
-        ipod.setVolume(file:"forDiscardLetters", type: "mp3", vol : 0.5)
-        ipod.setVolume(file:"pause", type: "mp3", vol: 0.5)
-        ipod.setVolume(file:"questSound", vol: 0.6)
-        ipod.setVolume(file:"dramatic", type: "mp3", vol: 0.7)
+        ipod.setVolume("forDiscardLetters", "mp3", 0.5)
+        ipod.setVolume("pause", "mp3", 0.5)
+        ipod.setVolume("questSound", "wav", 0.6)
+        ipod.setVolume("dramatic", "mp3", 0.7)
     }
     
     func clearHighScores() {defaults.removeObject(forKey: "HighScores")}

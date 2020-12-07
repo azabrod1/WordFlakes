@@ -63,9 +63,9 @@ class MenuController: UIViewController, UIAdaptivePresentationControllerDelegate
         
         self.dismiss(animated:true, completion: {});
         
-        let ipod  = BoomBox()
-        ipod.shutUp(file:"dramatic", type: "mp3")
-        ipod.shutUp(file:"forSnow", type: "mp3")
+        let ipod  = BoomBox.ipod()//BoomBox()
+        ipod.shutUp("dramatic", "mp3")
+        ipod.shutUp("forSnow", "mp3")
         
         EffectsController.easySound(m:mainController)
         
