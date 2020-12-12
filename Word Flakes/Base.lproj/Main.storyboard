@@ -314,7 +314,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                             <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-uQ-5wt">
                                 <rect key="frame" x="164" y="-7" width="272" height="118"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2016 Organized Chaos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-Rl-K32">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2016-2020 Organized Chaos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-Rl-K32">
                                 <rect key="frame" x="120.5" y="836" width="173" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="165-WB-irj"/>
@@ -370,7 +370,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScores" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-71-ixG">
-                                <rect key="frame" x="20" y="39" width="374" height="90.5"/>
+                                <rect key="frame" x="20" y="39" width="374" height="90.500000000000028"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kg4-71-ixG" secondAttribute="height" multiplier="517:125" id="Omd-Ro-eaE"/>
                                 </constraints>
