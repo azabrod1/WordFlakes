@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4640" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -172,7 +170,9 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">Welcome to the Letterstorm. For best results, one should be prepared to think quickly and strategically and of course arm themselves with a vast vocabulary. Click on any levitating letters to construct a word and submit it by pressing PP button at the bottom right of the screen. If you selected a wrong letter, you can delete it by pressing BB button right next to it, or you can remove all the selected letters by holding that same button a bit longer.  You are running against the clock - your energy level falls faster and faster as the game goes on. Luckily, every word you construct adds to your energy level (as well as to your score) according to the simple rules: The word's score is the sum of the values of the letters that make up the word. Each yellow letter multiplies that score by two, each red by three and the rare purple letters multiply it by five! Try to create words that have many colorful letters to score a lot of points! Longer words also get bigger and bigger length bonuses, so if you want to beat your highscore, get out the dictionary and aim for large words! Those four letter words won't get you far! You can see the potential effect of the multipliers and expected bonus right above the word you are constructing.  A few special objects can  help you along the way: The WW character lets you select any letter. The SS allows you to refresh available letters. The total value of destroyed letters is added to your score and energy level. The FF temporarily releases additional letters, so you have more choice for constructing your word.
 The GG adds points to your energy level and score (if you can catch it). The NN freezes the energy level during the snowstorm. The RR and YY will assign all the available letters the corresponding multiplier (unless a letter has a higher multiplier already). 
-You can alway pause the game by pressing the AA button on the top left.  Enjoy the game!</string>
+You can alway pause the game by pressing the AA button on the top left.  Enjoy the game!
+
+Alex &amp; Greg Zabrodskiy @Organized Chaos</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -314,11 +314,11 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                             <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="menuLogo" translatesAutoresizingMaskIntoConstraints="NO" id="DgM-uQ-5wt">
                                 <rect key="frame" x="164" y="-7" width="272" height="118"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2016-2020 Organized Chaos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-Rl-K32">
-                                <rect key="frame" x="120.5" y="836" width="173" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="© 2020-2021 Organized Chaos (Alex &amp; Greg Zabrodskiy)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c5-Rl-K32">
+                                <rect key="frame" x="58" y="833" width="299" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="165-WB-irj"/>
-                                    <constraint firstAttribute="width" constant="173" id="TdQ-CH-Q8K"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TdQ-CH-Q8K"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="12"/>
                                 <color key="textColor" red="0.3572578408" green="0.7409953682" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -348,7 +348,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdE-NZ-XxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="280"/>
+            <point key="canvasLocation" x="957.97101449275374" y="279.91071428571428"/>
         </scene>
         <!--High Score Controller-->
         <scene sceneID="PDx-uz-MyC">
@@ -370,7 +370,7 @@ You can alway pause the game by pressing the AA button on the top left.  Enj
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScores" translatesAutoresizingMaskIntoConstraints="NO" id="kg4-71-ixG">
-                                <rect key="frame" x="20" y="39" width="374" height="90.500000000000028"/>
+                                <rect key="frame" x="20" y="39" width="374" height="90.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="kg4-71-ixG" secondAttribute="height" multiplier="517:125" id="Omd-Ro-eaE"/>
                                 </constraints>

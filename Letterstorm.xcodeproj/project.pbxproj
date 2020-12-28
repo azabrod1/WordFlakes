@@ -497,6 +497,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LetterStorm2";
 				PRODUCT_NAME = Letterstorm;
 				PROVISIONING_PROFILE = "";
@@ -518,6 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "Organized-Chaos.LetterStorm2";
 				PRODUCT_NAME = Letterstorm;
 				PROVISIONING_PROFILE = "";
